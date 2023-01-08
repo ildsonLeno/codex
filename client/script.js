@@ -78,7 +78,7 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv);
 
-  const response = await fetch("http://codex-vae6.onrender.com", {
+  const response = await fetch("https://codex-vae6.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
