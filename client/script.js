@@ -69,20 +69,16 @@ const handleSubmit = async (e) => {
   // to clear the textarea input
   form.reset();
 
-  // bot's chatstripe
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
 
-  // to focus scroll to the bottom
   chatContainer.scrollTop = chatContainer.scrollHeight;
 
-  // specific message div
   const messageDiv = document.getElementById(uniqueId);
 
-  // messageDiv.innerHTML = "..."
   loader(messageDiv);
 
-  const response = await fetch("https://codex-vae6.onrender.com", {
+  const response = await fetch("http://codex-vae6.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

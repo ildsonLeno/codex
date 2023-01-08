@@ -5,6 +5,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
 
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -18,7 +19,7 @@ app.use(express.json());
 app.get("/", async (req, res) => {
   res.status(200).send({
     message: "Olá de CodeX!",
-  });
+  })
 });
 
 app.post("/", async (req, res) => {
@@ -37,13 +38,13 @@ app.post("/", async (req, res) => {
 
     res.status(200).send({
       bot: response.data.choices[0].text
-    });
+    })
   } catch (error) {
     console.log(error);
     res.status(500).send({ error })
   }
-});
+})
 
 app.listen(5000, () =>
-  console.log("AI server started on http://localhost:5000")
+  console.log("AI server started on http://codex-vae6.onrender.com")
 );
